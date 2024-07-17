@@ -9,7 +9,10 @@
   ],
   "exports": {
     "./styles.css": "./dist/index.css",
-    "./navbar": "./src/navbar.tsx"
+    "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./input": "./src/input.tsx",
+    "./select": "./src/select.tsx"
   },
   "license": "MIT",
   "scripts": {

@@ -1,10 +1,16 @@
 import express from "express";
 import prisma from "@repo/db";
+import cors from "cors";
+
 const app = express();
+
+app.use(express.json())
+app.use(cors())
 
 app.get('/',(req,res)=>{
   res.send("Running...")
 })
+
 app.post("/hdfc-webhook", async (req, res) => {
   const transaction = {
     token: req.body.token,
@@ -39,4 +45,6 @@ app.post("/hdfc-webhook", async (req, res) => {
 });
 
 
-app.listen(3003)
+app.listen(3002,()=>{
+  console.log('Bank Webhook running on http://localhost:3002')
+})

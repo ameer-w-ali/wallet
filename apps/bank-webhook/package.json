@@ -1,12 +1,14 @@
 {
   "name": "bank-webhook",
   "version": "1.0.0",
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "description": "",
+  "scripts": {
+    "build": "npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js",
+    "dev": "npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js && node dist/index.js"
+  },
   "dependencies": {
     "@repo/db": "*",
+    "cors": "^2.8.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
