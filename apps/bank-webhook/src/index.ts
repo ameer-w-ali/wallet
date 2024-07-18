@@ -19,6 +19,13 @@ app.post("/hdfc-webhook", async (req, res) => {
   };
 
   try {
+
+    const ramp = await prisma.onRampTransaction.findFirst({
+      where:{
+        token:transaction.token
+      }
+    })
+    if(ramp?.status!== 'Processing') throw new Error("No Transaction is found")
     await prisma.$transaction([
       prisma.balance.updateMany({
         where: { userId: Number(transaction.userId) },
@@ -40,7 +47,7 @@ app.post("/hdfc-webhook", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(211).json({ message: "Error while processing webhook" });
+    res.status(411).json({ message: "Error while processing webhook" });
   }
 });
 

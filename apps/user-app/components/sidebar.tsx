@@ -1,4 +1,4 @@
-import { ArrowRightLeft, Clock, Home } from "lucide-react";
+import { ArrowRightLeft, Clock, Home, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
 export default function Sidebar() {
@@ -14,6 +14,9 @@ export default function Sidebar() {
         </Link>
         <Link href="/transactions" className="icon">
           <Clock size={18} /> Transactions
+        </Link>
+        <Link href="/p2p" className="icon">
+          <TrendingUp  size={18}/> P2P Transfer
         </Link>
       </div>
     </aside>

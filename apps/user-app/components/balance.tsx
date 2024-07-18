@@ -1,13 +1,10 @@
+import { getBalance } from "@/app/lib/transactions";
 import Card from "@repo/ui/card";
 
-type PropTypes = {
-  amount: number;
-  locked: number;
-};
-
-export default function Balance({ amount, locked }: PropTypes) {
+export default async function Balance() {
+  const { amount, locked } = await getBalance();
   return (
-    <Card title="Balance" className="basis-2/5 h-full">
+    <Card title="Balance">
       <Para title="Unlocked Balance" value={amount} />
       <Para title="Locked Balance" value={locked} />
       <Para

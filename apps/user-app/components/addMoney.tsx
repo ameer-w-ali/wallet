@@ -25,7 +25,7 @@ export default function AddMoney() {
   const [value, setValue] = useState(0);
 
   return (
-    <Card title="Add Money" className="basis-3/5">
+    <Card title="Add Money" className="basis-1/2 h-full">
       <Input
         label="Amount"
         id="amount"
