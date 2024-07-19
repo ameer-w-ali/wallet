@@ -34,7 +34,7 @@ export default function Transactions() {
                   {t.type === "sent" ? "Sent to" : "Received from"}{" "}
                   {t.name ? t.name : t.number}
                 </div>
-                <div className="text-xs">{t.time.toLocaleDateString()}</div>
+                <div className="text-xs">{t.time.toDateString()}</div>
               </div>
               <div
                 className={`font-medium ${t.type === "sent" ? "text-red-700" : "text-green-700"}`}
