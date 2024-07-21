@@ -28,3 +28,15 @@ jobs:
       - 
         name: Verify Push Image
         run: docker pull ameerwajidali/monorepo:latest
+      # - 
+      #   name: Deploy to ec2
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{secrets.SSH_HOST}}
+      #     username: ${{secrets.SSH_USERNAME}}
+      #     key: ${{secrets.SSH_KEY}}
+      #     scripts: | 
+      #       sudo docker pull ameerwajidali/monorepo:latest
+      #       sudo docker stop monorepo || true
+      #       sudo docker rm  web-app || true
+      #       sudo docker run -d  --name web-app -p 3000:3000 ameerwajidali/monorepo:latest
