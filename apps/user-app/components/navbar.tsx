@@ -2,7 +2,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Button from "@repo/ui/button";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const session = useSession();
