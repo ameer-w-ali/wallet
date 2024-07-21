@@ -1,8 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env","**/.env.*local"],
   "tasks": {
     "build": {
-      "dependsOn": ["^build","^db:generate"],
+      "dependsOn": ["^build", "^db:generate"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
